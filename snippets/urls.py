@@ -10,7 +10,11 @@ urlpatterns = [
     # path('',views.smippet_list),
     # path('<int:pk>/',views.snippet_detail),
     path('',views.SnippetListView.as_view()),
-    path('<int:pk>/',views.SnippetDetailView.as_view())
+    path('<int:pk>/',views.SnippetDetailView.as_view()),
+
+    path('demo/',views.SnippetList.as_view()),
+    path('demo1/',views.SnippetList1.as_view()),
+    path('demo1/<int:pk>/',views.SnippetDetail1.as_view())
 ]
 
 

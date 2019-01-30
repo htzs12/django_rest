@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from snippets.models import Snippet
+from .models import Snippet
 from snippets.serializers import SnippetSerializer
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
@@ -93,14 +93,13 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 class SnippetListView(APIView):
-    """
-    查询视图
-    """
+    # 查询接口
     def get(self,request,format=None):
         snippets = Snippet.objects.all()
         serializer = SnippetSerializer(snippets,many=True)
         return Response(serializer.data)
 
+    # 更新接口
     def post(self,request,format=None):
         serializer = SnippetSerializer(data=request.data)
         if serializer.is_valid():
@@ -110,6 +109,9 @@ class SnippetListView(APIView):
 
 
 class SnippetDetailView(APIView):
+    """
+    id 增删改查视图
+    """
     def get_object(self,pk):
         try:
             return Snippet.objects.get(pk=pk)
@@ -134,3 +136,35 @@ class SnippetDetailView(APIView):
         snippet.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+
+# --------------------------------------------------------------------------------
+
+# 基于mixins类视图
+
+from rest_framework import mixins
+from rest_framework import generics
+
+
+class SnippetList(mixins.ListModelMixin,mixins.CreateModelMixin,generics.GenericAPIView):
+    queryset = Snippet.objects.all()
+    serializer_class = SnippetSerializer
+
+    def get(self,request,*args, **kwargs):
+        return self.list(request,*args,**kwargs)
+    
+    def post(self,request,*args,**kwargs):
+        return self.create(request,*args, **kwargs)
+
+
+# --------------------------------------------------------------------------------
+
+# 基于类视图 - 封装更完善
+
+class SnippetList1(generics.ListCreateAPIView):
+    queryset = Snippet.objects.all()
+    serializer_class = SnippetSerializer
+
+
+class SnippetDetail1(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Snippet.objects.all()
+    serializer_class = SnippetSerializer
