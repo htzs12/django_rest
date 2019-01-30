@@ -7,8 +7,10 @@ from snippets import views
 app_name = 'snippets'
 
 urlpatterns = [
-    path('',views.smippet_list),
-    path('<int:pk>/',views.snippet_detail),
+    # path('',views.smippet_list),
+    # path('<int:pk>/',views.snippet_detail),
+    path('',views.SnippetListView.as_view()),
+    path('<int:pk>/',views.SnippetDetailView.as_view())
 ]
 
 

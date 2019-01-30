@@ -22,8 +22,8 @@ from demo import views
 
 
 router = routers.DefaultRouter()
-router.register('users',views.UserViewSet)
-router.register('groups',views.GroupViewSet)
+router.register('users', views.UserViewSet)
+router.register('groups', views.GroupViewSet)
 
 # schema_view = get_swagger_view(title='mydocs')
 
