@@ -8,6 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.contrib.auth.models import User
 
 #  基于函数视图
 # @csrf_exempt
@@ -164,7 +165,31 @@ class SnippetList1(generics.ListCreateAPIView):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
 
+    def perform_create(self,serializer):
+        serializer.save(owner=self.request.user)
+
 
 class SnippetDetail1(generics.RetrieveUpdateDestroyAPIView):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
+
+
+# --------------------------------------------------------------------------------
+
+# 基于类视图 - 验证
+
+from snippets.serializers import UserSerializer
+from rest_framework import permissions
+from snippets.permissions import IsOwnerOrReadOnly
+
+
+class UserList(generics.ListAPIView):
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly)
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class Userdetail(generics.RetrieveAPIView):
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly)
+    queryset = User.objects.all()
+    serializer_class = UserSerializer

@@ -14,7 +14,10 @@ urlpatterns = [
 
     path('demo/',views.SnippetList.as_view()),
     path('demo1/',views.SnippetList1.as_view()),
-    path('demo1/<int:pk>/',views.SnippetDetail1.as_view())
+    path('demo1/<int:pk>/',views.SnippetDetail1.as_view()),
+
+    path('users/',views.UserList.as_view()),
+    path('users/<int:pk>/',views.Userdetail.as_view())
 ]
 
 
