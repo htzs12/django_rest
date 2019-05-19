@@ -4,6 +4,7 @@ from django.forms.models import model_to_dict
 from django.contrib.auth.models import User,Group
 from rest_framework import viewsets
 from .serializers import GroupSerializer,UserSerializer
+from django.views.generic.base import View
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -16,3 +17,6 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
 
 
+class VueView(View):
+    def get(self, request):
+        return render(request, 'index.html')
