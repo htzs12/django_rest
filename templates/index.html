@@ -19,7 +19,40 @@
     {% endverbatim %}
 </div>
 
+<p>--------------------------------------------------------------</p>
 
+<div id="app2">
+    {% verbatim %}
+        <p v-bind:title="message">悬停查看时间</p>
+        <input v-bind:value="message">
+    {% endverbatim %}
+</div>
+
+<p>--------------------------------------------------------------</p>
+
+<div id="app3">
+    {% verbatim %}
+        <p v-if="seen">显示这里</p>
+        <p v-if="see">显示这里</p>
+    {% endverbatim %}
+</div>
+
+<p>--------------------------------------------------------------</p>
+
+<div id="app4">
+    {% verbatim %}
+        <p v-for="todo in todos">{{ todo.text }}</p>
+    {% endverbatim %}
+</div>
+
+<p>--------------------------------------------------------------</p>
+
+<div id="app5">
+    {% verbatim %}
+        <p>message</p>
+    <button v-on:click="'reverseMessage">逆转消息</button>
+    {% endverbatim %}
+</div>
 
 {#<script src="{% static 'js/vue.js' %}"></script>#}
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -32,7 +65,46 @@ var app = new Vue({
       show: true,
       hide: false
   }
-})
+});
+
+var app2 = new Vue({
+    el: '#app2',
+    data: {
+        message: '页面加载'+new Date().toLocaleString()
+    }
+});
+
+var app3 = new Vue({
+    el: '#app3',
+    data: {
+        seen: true,
+        see: false
+    }
+});
+
+var app4 = new Vue({
+    el: '#app4',
+    data: {
+        todos: [
+          { text: '学习 JavaScript' },
+          { text: '学习 Vue' },
+          { text: '整个牛项目' }
+        ]
+    }
+});
+
+var app5 = new Vue({
+    el: '#app5',
+    data: {
+        message: 'hello haoge!'
+    },
+    methods: {
+        reverseMessage: function () {
+
+        }
+    }
+});
+
 
 </script>
 
