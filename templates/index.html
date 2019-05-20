@@ -48,13 +48,25 @@
 <p>--------------------------------------------------------------</p>
 
 <div id="app5">
+    <p>haha</p>
     {% verbatim %}
-        <p>message</p>
+        <p>{{ message }}</p>
     <button v-on:click="'reverseMessage">逆转消息</button>
     {% endverbatim %}
 </div>
 
-{#<script src="{% static 'js/vue.js' %}"></script>#}
+<p>--------------------------------------------------------------</p>
+
+<div id="app6">
+    {% verbatim %}
+        <p>{{ message }}</p>
+        <input v-model="message">
+    {% endverbatim %}
+</div>
+
+<p>--------------------------------------------------------------</p>
+
+
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script>
 
@@ -94,17 +106,23 @@ var app4 = new Vue({
 });
 
 var app5 = new Vue({
-    el: '#app5',
-    data: {
-        message: 'hello haoge!'
-    },
-    methods: {
-        reverseMessage: function () {
-
-        }
+  el: '#app5',
+  data: {
+    message: 'Hello Vue.js!'
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('')
     }
-});
+  }
+})
 
+var app6 = new Vue({
+  el: '#app6',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
 
 </script>
 
