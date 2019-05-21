@@ -128,7 +128,7 @@
 		<p>-------------------------------------------</p>
 		<ul>
 			<template v-for='(num, index) in numbers' v-bind:key=num.id>
-			   	<li>{{ index }} : {{ num }}
+				<li>{{ index }} : {{ num }}
 				<li>
 			</template>
 		</ul>
@@ -151,9 +151,23 @@
 
 	<p>--------------------------------------------------------------</p>
 
+	<div id="app15">
+		<button v-on:click='counter += 1'>Add 1</button>
+		<p>点击增加{{ counter }}</p>
+	</div>
+
+	<p>--------------------------------------------------------------</p>
+
+	<div id="app16">
+			<button v-on:click='greet'>点击执行函数Greet</button>
+			<button v-on:click='say("haoge")'>点击执行函数say</button>
+		</div>
+	
+		<p>--------------------------------------------------------------</p>
+
+
 
 	{% endverbatim %}
-
 
 	<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>

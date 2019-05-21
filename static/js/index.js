@@ -248,20 +248,20 @@ var app13 = new Vue({
         numbers: [1, 2, 3, 4, 5]
     },
     computed: {
-        evenNumbers: function (param) { 
-            return this.numbers.filter(function (number) { 
+        evenNumbers: function (param) {
+            return this.numbers.filter(function (number) {
                 return number % 2 === 0
-             })
-         }
+            })
+        }
     }, // 2 4
     methods: {
-        even: function (numbers) { 
-            return numbers.filter(function (number) { 
+        even: function (numbers) {
+            return numbers.filter(function (number) {
                 return number % 2 === 0
-             })
-         }
+            })
+        }
     } // 2 4
-}) 
+})
 
 Vue.component('todo-item', {
     template: '\
@@ -271,36 +271,59 @@ Vue.component('todo-item', {
       </li>\
     ',
     props: ['title']
-  })
-  
-  new Vue({
+})
+
+new Vue({
     el: '#app14',
     data: {
-      newTodoText: '',
-      todos: [
-        {
-          id: 1,
-          title: 'Do the dishes',
-        },
-        {
-          id: 2,
-          title: 'Take out the trash',
-        },
-        {
-          id: 3,
-          title: 'Mow the lawn'
-        }
-      ],
-      nextTodoId: 4
+        newTodoText: '',
+        todos: [{
+                id: 1,
+                title: 'Do the dishes',
+            },
+            {
+                id: 2,
+                title: 'Take out the trash',
+            },
+            {
+                id: 3,
+                title: 'Mow the lawn'
+            }
+        ],
+        nextTodoId: 4
     },
     methods: {
-      addNewTodo: function () {
-        this.todos.push({
-          id: this.nextTodoId++,
-          title: this.newTodoText
-        })
-        this.newTodoText = ''
-      }
+        addNewTodo: function () {
+            this.todos.push({
+                id: this.nextTodoId++,
+                title: this.newTodoText
+            })
+            this.newTodoText = ''
+        }
     }
-  })
+})
+
+
+var app15 = new Vue({
+    el: '#app15',
+    data: {
+       counter: 0 
+    }
+})
+
+
+var app16 = new Vue({
+    el: '#app16',
+    data: {
+       name: 'vue.js' 
+    },
+    methods: {
+        greet: function (param) { 
+            alert('hello' + this.name + '!')
+         },
+         say: function (message) { 
+             alert('hello' + message)
+          } // hello haoge
+    }
+}) // hello vue.js
 
