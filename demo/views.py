@@ -19,4 +19,5 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 class VueView(View):
     def get(self, request):
+        # print('"python.autoComplete.addBrackets": true,')
         return render(request, 'index.html')
