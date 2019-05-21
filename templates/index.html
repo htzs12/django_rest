@@ -3,128 +3,162 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+	<meta charset="UTF-8">
+	<title>Title</title>
 </head>
+
 <body>
+	{% verbatim %}
+
+	<div id="app">
+		<p>{{ message }}</p>
+		<p v-if="show">显示出来</p>
+		<p v-if="hide">不显示出来</p>
+		<input type="text" v-model='message'>
+	</div>
+
+	<p>--------------------------------------------------------------</p>
+
+	<div id="app2">
+		<p v-bind:title="message">悬停查看时间</p>
+		<input v-bind:value="message">
+	</div>
+
+	<p>--------------------------------------------------------------</p>
+
+	<div id="app3">
+		<p v-if="seen">显示这里</p>
+		<p v-if="see">显示这里</p>
+	</div>
+
+	<p>--------------------------------------------------------------</p>
+
+	<div id="app4">
+		<p v-for="todo in todos">{{ todo.text }}</p>
+	</div>
+
+	<p>--------------------------------------------------------------</p>
+
+	<div id="app5">
+		<p>haha</p>
+		<p>{{ message }}</p>
+		<button v-on:click="'reverseMessage">逆转消息</button>
+	</div>
+
+	<p>--------------------------------------------------------------</p>
+
+	<div id="app6">
+		<p>{{ message }}</p>
+		<input v-model="message">
+	</div>
+
+	<p>--------------------------------------------------------------</p>
 
 
-<div id="app">
-    {% verbatim %}
-        <p>{{ message }}</p>
-        <p v-if="show">显示出来</p>
-        <p v-if="hide">不显示出来</p>
-    <input type="text" v-model='message'>
-    {% endverbatim %}
-</div>
+	<div id="app7">
 
-<p>--------------------------------------------------------------</p>
+		<ol>
+			<todo-item v-for='item in groceryList' v-bind:todo='item' v-bind:key='item.id'>
 
-<div id="app2">
-    {% verbatim %}
-        <p v-bind:title="message">悬停查看时间</p>
-        <input v-bind:value="message">
-    {% endverbatim %}
-</div>
+			</todo-item>
+		</ol>
 
-<p>--------------------------------------------------------------</p>
+	</div>
 
-<div id="app3">
-    {% verbatim %}
-        <p v-if="seen">显示这里</p>
-        <p v-if="see">显示这里</p>
-    {% endverbatim %}
-</div>
+	<p>--------------------------------------------------------------</p>
 
-<p>--------------------------------------------------------------</p>
-
-<div id="app4">
-    {% verbatim %}
-        <p v-for="todo in todos">{{ todo.text }}</p>
-    {% endverbatim %}
-</div>
-
-<p>--------------------------------------------------------------</p>
-
-<div id="app5">
-    <p>haha</p>
-    {% verbatim %}
-        <p>{{ message }}</p>
-    <button v-on:click="'reverseMessage">逆转消息</button>
-    {% endverbatim %}
-</div>
-
-<p>--------------------------------------------------------------</p>
-
-<div id="app6">
-    {% verbatim %}
-        <p>{{ message }}</p>
-        <input v-model="message">
-    {% endverbatim %}
-</div>
-
-<p>--------------------------------------------------------------</p>
+	<div id="app8">
+		<a v-bind:href='url'>哈哈哈</a>
+		<a v-on:click='demo'>点击</a>
+		<input v-bind:[value]='value' type="text">
+	</div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script>
+	<p>--------------------------------------------------------------</p>
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue!',
-      show: true,
-      hide: false
-  }
-});
+	<p>--------------------------------------------------------------</p>
 
-var app2 = new Vue({
-    el: '#app2',
-    data: {
-        message: '页面加载'+new Date().toLocaleString()
-    }
-});
+	<div id="app9">
+		<p>{{ message.split('').reverse().join('') }}</p>
+	</div>
 
-var app3 = new Vue({
-    el: '#app3',
-    data: {
-        seen: true,
-        see: false
-    }
-});
+	<p>--------------------------------------------------------------</p>
 
-var app4 = new Vue({
-    el: '#app4',
-    data: {
-        todos: [
-          { text: '学习 JavaScript' },
-          { text: '学习 Vue' },
-          { text: '整个牛项目' }
-        ]
-    }
-});
+	<div id="app10">
+		<p>Original message: "{{ message }}"</p>
+		<!-- <p>Computed reversed message: "{{ reversedMessage }}"</p> -->
+		<!-- <p>{{ now() }}"</p> -->
+	</div>
 
-var app5 = new Vue({
-  el: '#app5',
-  data: {
-    message: 'Hello Vue.js!'
-  },
-  methods: {
-    reverseMessage: function () {
-      this.message = this.message.split('').reverse().join('')
-    }
-  }
-})
+	<p>--------------------------------------------------------------</p>
 
-var app6 = new Vue({
-  el: '#app6',
-  data: {
-    message: 'Hello Vue!'
-  }
-})
+	<div id="app11">
+		<p>{{ fullName }}</p>
+	</div>
 
-</script>
+	<p>--------------------------------------------------------------</p>
 
+	<p>--------------------------------------------------------------</p>
+
+	<div id="app12">
+		<p>
+			Ask a yes/no question:
+			<input v-model='question'>
+		</p>
+		<p>{{ answer }}</p>
+	</div>
+
+	<p>--------------------------------------------------------------</p>
+
+
+	<p>--------------------------------------------------------------</p>
+
+	<div id="app13">
+		<li v-for="n in evenNumbers">{{ n }}</li>
+		<p>-------------------------------------------</p>
+		<li v-for="n in even(numbers)">{{ n }}</li>
+
+		<p>
+			<span v-for='n in 10'>{{ n }}</span>
+			<!-- 12345678910 -->
+		</p>
+
+		<p>-------------------------------------------</p>
+		<ul>
+			<template v-for='(num, index) in numbers' v-bind:key=num.id>
+			   	<li>{{ index }} : {{ num }}
+				<li>
+			</template>
+		</ul>
+
+	</div>
+
+	<p>--------------------------------------------------------------</p>
+
+	<div id="app14">
+		<form v-on:submit.prevent="addNewTodo">
+			<label for="new-todo">Add a todo</label>
+			<input v-model="newTodoText" id="new-todo" placeholder="E.g. Feed the cat">
+			<button>Add</button>
+		</form>
+		<ul>
+			<li is="todo-item" v-for="(todo, index) in todos" v-bind:key="todo.id" v-bind:title="todo.title"
+				v-on:remove="todos.splice(index, 1)"></li>
+		</ul>
+	</div>
+
+	<p>--------------------------------------------------------------</p>
+
+
+	{% endverbatim %}
+
+
+	<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="{% static 'js/index.js' %}"></script>
 </body>
+
 </html>
