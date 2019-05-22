@@ -327,3 +327,28 @@ var app16 = new Vue({
     }
 }) // hello vue.js
 
+
+// vue组件 (下面是全局注册实例)
+Vue.component('button-counter', {
+    data: function (param) { 
+        return {
+            count: 0
+        }
+     },
+     template: "<button v-on:click='count++'>You clicked me {{ count }} times.</button>"
+})
+
+new Vue({
+    el: '#app17'
+})
+
+
+// vue组件传递数据 (下面是全局注册实例)
+Vue.component('blog-post', {
+    props: ['title'],
+     template: "<h3>{{ title }}</h3>"
+})
+
+new Vue({
+    el: '#app18'
+})
