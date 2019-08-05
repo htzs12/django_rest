@@ -2,6 +2,7 @@
 import os
 import sys
 
+# 主程序命令启动入口
 if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_rest.settings')
     try:

@@ -26,8 +26,8 @@ var app4 = new Vue({
     el: '#app4',
     data: {
         todos: [{
-                text: '学习 JavaScript'
-            },
+            text: '学习 JavaScript'
+        },
             {
                 text: '学习 Vue'
             },
@@ -48,27 +48,27 @@ var app5 = new Vue({
             this.message = this.message.split('').reverse().join('')
         }
     }
-})
+});
 
 var app6 = new Vue({
     el: '#app6',
     data: {
         message: 'Hello Vue!'
     }
-})
+});
 
 Vue.component('todo-item', {
     props: ['todo'],
     template: '<li>{{ todo.text }}</li>'
-})
+});
 
 var app7 = new Vue({
     el: '#app7',
     data: {
         groceryList: [{
-                id: 0,
-                text: '蔬菜'
-            },
+            id: 0,
+            text: '蔬菜'
+        },
             {
                 id: 1,
                 text: '奶酪'
@@ -79,7 +79,7 @@ var app7 = new Vue({
             }
         ]
     }
-})
+});
 
 var app7 = new Vue({
     data: {
@@ -105,7 +105,7 @@ var app8 = new Vue({
             alert('这是点击');
         }
     }
-})
+});
 
 
 var app9 = new Vue({
@@ -113,7 +113,7 @@ var app9 = new Vue({
     data: {
         message: 'hello world!'
     }
-})
+});
 
 var app10 = new Vue({
     el: '#app10',
@@ -145,7 +145,7 @@ var app10 = new Vue({
     //         return Date.now()
     //     }
     // }
-})
+});
 // console.log(app10.reversedMessage); // !dlrow olleh
 
 var app11 = new Vue({
@@ -178,7 +178,7 @@ var app11 = new Vue({
             }
         }
     },
-})
+});
 app11.fullName = 'hao ge'
 // Foo Bar
 
@@ -220,7 +220,7 @@ var app12 = new Vue({
                 })
         }
     }
-})
+});
 
 var user = new Vue({
     data: {
@@ -229,7 +229,7 @@ var user = new Vue({
         }
     }
 })
-
+;
 // 设置属性值1
 Vue.set(user.userProfile, 'age', 28)
 console.log(user.userProfile.name); // haoge
@@ -238,7 +238,7 @@ console.log(user.userProfile.age); // 28
 user.userProfile = Object.assign({}, user.userProfile, {
     high: 180,
     school: '蚌埠'
-})
+});
 console.log(user.userProfile.school); // 蚌埠
 
 // v-for 
@@ -261,7 +261,7 @@ var app13 = new Vue({
             })
         }
     } // 2 4
-})
+});
 
 Vue.component('todo-item', {
     template: '\
@@ -272,15 +272,15 @@ Vue.component('todo-item', {
     ',
     props: ['title']
 })
-
+;
 new Vue({
     el: '#app14',
     data: {
         newTodoText: '',
         todos: [{
-                id: 1,
-                title: 'Do the dishes',
-            },
+            id: 1,
+            title: 'Do the dishes',
+        },
             {
                 id: 2,
                 title: 'Take out the trash',
@@ -302,53 +302,65 @@ new Vue({
         }
     }
 })
-
+;
 
 var app15 = new Vue({
     el: '#app15',
     data: {
-       counter: 0 
+        counter: 0
     }
 })
-
+;
 
 var app16 = new Vue({
     el: '#app16',
     data: {
-       name: 'vue.js' 
+        name: 'vue.js'
     },
     methods: {
-        greet: function (param) { 
+        greet: function (param) {
             alert('hello' + this.name + '!')
-         },
-         say: function (message) { 
-             alert('hello' + message)
-          } // hello haoge
+        },
+        say: function (message) {
+            alert('hello' + message)
+        } // hello haoge
     }
 }) // hello vue.js
-
+;
 
 // vue组件 (下面是全局注册实例)
 Vue.component('button-counter', {
-    data: function (param) { 
+    data: function (param) {
         return {
             count: 0
         }
-     },
-     template: "<button v-on:click='count++'>You clicked me {{ count }} times.</button>"
+    },
+    template: "<button v-on:click='count++'>You clicked me {{ count }} times.</button>"
 })
-
+;
 new Vue({
     el: '#app17'
 })
-
+;
 
 // vue组件传递数据 (下面是全局注册实例)
 Vue.component('blog-post', {
     props: ['title'],
-     template: "<h3>{{ title }}</h3>"
+    template: "<h3>{{ title }}</h3>"
 })
-
+;
 new Vue({
     el: '#app18'
-})
+});
+
+
+Vue.component('button-counter', {
+    data: function () {
+        return {
+            count: 0
+        }
+    },
+    template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+});
+
+new Vue({ el: '#components-demo'});

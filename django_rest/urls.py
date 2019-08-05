@@ -31,7 +31,7 @@ urlpatterns = [
     path('',include(router.urls)),
     path('snippets/',include('snippets.urls')),
     path('demo/',include('demo.urls')),
-    path('docs/',include_docs_urls(title='demo')),
+    # path('docs/',include_docs_urls(title='demo')),
     # path('docs/',schema_view),
     path('api-auth/',include('rest_framework.urls',namespace='rest_framework')),
     path('admin/', admin.site.urls),
