@@ -5,202 +5,234 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 
 <body>
-	{% verbatim %}
+{% verbatim %}
 
-	<div id="app">
-		<p>{{ message }}</p>
-		<p v-if="show">显示出来</p>
-		<p v-if="hide">不显示出来</p>
-		<input type="text" v-model='message'>
-	</div>
+<div id="app">
+    <p>{{ message }}</p>
+    <p v-if="show">显示出来</p>
+    <p v-if="hide">不显示出来</p>
+    <input type="text" v-model='message'>
+</div>
 
-	<p>--------------------------------------------------------------</p>
+<p>--------------------------------------------------------------</p>
 
-	<div id="app2">
-		<p v-bind:title="message">悬停查看时间</p>
-		<input v-bind:value="message">
-	</div>
+<div id="app2">
+    <p v-bind:title="message">悬停查看时间</p>
+    <input v-bind:value="message">
+</div>
 
-	<p>--------------------------------------------------------------</p>
+<p>--------------------------------------------------------------</p>
 
-	<div id="app3">
-		<p v-if="seen">显示这里</p>
-		<p v-if="see">显示这里</p>
-	</div>
+<div id="app3">
+    <p v-if="seen">显示这里</p>
+    <p v-if="see">显示这里</p>
+</div>
 
-	<p>--------------------------------------------------------------</p>
+<p>--------------------------------------------------------------</p>
 
-	<div id="app4">
-		<p v-for="todo in todos">{{ todo.text }}</p>
-	</div>
+<div id="app4">
+    <p v-for="todo in todos">{{ todo.text }}</p>
+</div>
 
-	<p>--------------------------------------------------------------</p>
+<p>--------------------------------------------------------------</p>
 
-	<div id="app5">
-		<p>haha</p>
-		<p>{{ message }}</p>
-		<button v-on:click="'reverseMessage">逆转消息</button>
-	</div>
+<div id="app5">
+    <p>haha</p>
+    <p>{{ message }}</p>
+    <button v-on:click="'reverseMessage">逆转消息</button>
+</div>
 
-	<p>--------------------------------------------------------------</p>
+<p>--------------------------------------------------------------</p>
 
-	<div id="app6">
-		<p>{{ message }}</p>
-		<input v-model="message">
-	</div>
+<div id="app6">
+    <p>{{ message }}</p>
+    <input v-model="message">
+</div>
 
-	<p>--------------------------------------------------------------</p>
-
-
-	<div id="app7">
-
-		<ol>
-			<todo-item v-for='item in groceryList' v-bind:todo='item' v-bind:key='item.id'>
-
-			</todo-item>
-		</ol>
-
-	</div>
-
-	<p>--------------------------------------------------------------</p>
-
-	<div id="app8">
-		<a v-bind:href='url'>哈哈哈</a>
-		<a v-on:click='demo'>点击</a>
-		<input v-bind:[value]='value' type="text">
-	</div>
+<p>--------------------------------------------------------------</p>
 
 
-	<p>--------------------------------------------------------------</p>
+<div id="app7">
 
-	<p>--------------------------------------------------------------</p>
+    <ol>
+        <todo-item v-for='item in groceryList' v-bind:todo='item' v-bind:key='item.id'>
 
-	<div id="app9">
-		<p>{{ message.split('').reverse().join('') }}</p>
-	</div>
+        </todo-item>
+    </ol>
 
-	<p>--------------------------------------------------------------</p>
+</div>
 
-	<div id="app10">
-		<p>Original message: "{{ message }}"</p>
-		<!-- <p>Computed reversed message: "{{ reversedMessage }}"</p> -->
-		<!-- <p>{{ now() }}"</p> -->
-	</div>
+<p>--------------------------------------------------------------</p>
 
-	<p>--------------------------------------------------------------</p>
-
-	<div id="app11">
-		<p>{{ fullName }}</p>
-	</div>
-
-	<p>--------------------------------------------------------------</p>
-
-	<p>--------------------------------------------------------------</p>
-
-	<div id="app12">
-		<p>
-			Ask a yes/no question:
-			<input v-model='question'>
-		</p>
-		<p>{{ answer }}</p>
-	</div>
-
-	<p>--------------------------------------------------------------</p>
+<div id="app8">
+    <a v-bind:href='url'>哈哈哈</a>
+    <a v-on:click='demo'>点击</a>
+    <input v-bind:[value]='value' type="text">
+</div>
 
 
-	<p>--------------------------------------------------------------</p>
+<p>--------------------------------------------------------------</p>
 
-	<div id="app13">
-		<li v-for="n in evenNumbers">{{ n }}</li>
-		<p>-------------------------------------------</p>
-		<li v-for="n in even(numbers)">{{ n }}</li>
+<p>--------------------------------------------------------------</p>
 
-		<p>
-			<span v-for='n in 10'>{{ n }}</span>
-			<!-- 12345678910 -->
-		</p>
+<div id="app9">
+    <p>{{ message.split('').reverse().join('') }}</p>
+</div>
 
-		<p>-------------------------------------------</p>
-		<ul>
-			<template v-for='(num, index) in numbers' v-bind:key=num.id>
-				<li>{{ index }} : {{ num }}
-				<li>
-			</template>
-		</ul>
+<p>--------------------------------------------------------------</p>
 
-	</div>
+<div id="app10">
+    <p>Original message: "{{ message }}"</p>
+    <!-- <p>Computed reversed message: "{{ reversedMessage }}"</p> -->
+    <!-- <p>{{ now() }}"</p> -->
+</div>
 
-	<p>--------------------------------------------------------------</p>
+<p>--------------------------------------------------------------</p>
 
-	<div id="app14">
-		<form v-on:submit.prevent="addNewTodo">
-			<label for="new-todo">Add a todo</label>
-			<input v-model="newTodoText" id="new-todo" placeholder="E.g. Feed the cat">
-			<button>Add</button>
-		</form>
-		<ul>
-			<li is="todo-item" v-for="(todo, index) in todos" v-bind:key="todo.id" v-bind:title="todo.title"
-				v-on:remove="todos.splice(index, 1)"></li>
-		</ul>
-	</div>
+<div id="app11">
+    <p>{{ fullName }}</p>
+</div>
 
-	<p>--------------------------------------------------------------</p>
+<p>--------------------------------------------------------------</p>
 
-	<div id="app15">
-		<button v-on:click='counter += 1'>Add 1</button>
-		<p>点击增加{{ counter }}</p>
-	</div>
+<p>--------------------------------------------------------------</p>
 
-	<p>--------------------------------------------------------------</p>
+<div id="app12">
+    <p>
+        Ask a yes/no question:
+        <input v-model='question'>
+    </p>
+    <p>{{ answer }}</p>
+</div>
 
-	<div id="app16">
-		<button v-on:click='greet'>点击执行函数Greet</button>
-		<button v-on:click='say("haoge")'>点击执行函数say</button>
-	</div>
-
-	<p>--------------------------------------------------------------</p>
-
-	<p>--------------------------------------------------------------</p>
-
-	<div id="app17">
-		<button-counter></button-counter>
-		<button-counter></button-counter>
-		<button-counter></button-counter>
-	</div>
-
-	<p>--------------------------------------------------------------</p>
-
-	<p>--------------------------------------------------------------</p>
-
-	<div id="app18">
-		<blog-post title='Why Vue is so fun'></blog-post>
-		<blog-post title='Blogging with Vue'></blog-post>
-	</div>
-
-	<p>--------------------------------------------------------------</p>
+<p>--------------------------------------------------------------</p>
 
 
-    <p>--------------------------------------------------------------</p>
-    <h1>组件测试</h1>
+<p>--------------------------------------------------------------</p>
 
-    <div class="" id="components-demo">
-        <button-counter></button-counter>
-    </div>
+<div id="app13">
+    <li v-for="n in evenNumbers">{{ n }}</li>
+    <p>-------------------------------------------</p>
+    <li v-for="n in even(numbers)">{{ n }}</li>
 
-    <p>--------------------------------------------------------------</p>
+    <p>
+        <span v-for='n in 10'>{{ n }}</span>
+        <!-- 12345678910 -->
+    </p>
+
+    <p>-------------------------------------------</p>
+    <ul>
+        <template v-for='(num, index) in numbers' v-bind:key=num.id>
+            <li>{{ index }} : {{ num }}
+            <li>
+        </template>
+    </ul>
+</div>
+
+<p>--------------------------------------------------------------</p>
+
+<div id="app14">
+    <form v-on:submit.prevent="addNewTodo">
+        <label for="new-todo">Add a todo</label>
+        <input v-model="newTodoText" id="new-todo" placeholder="E.g. Feed the cat">
+        <button>Add</button>
+    </form>
+    <ul>
+        <li is="todo-item" v-for="(todo, index) in todos" v-bind:key="todo.id" v-bind:title="todo.title"
+            v-on:remove="todos.splice(index, 1)"></li>
+    </ul>
+</div>
+
+<p>--------------------------------------------------------------</p>
+
+<div id="app15">
+    <button v-on:click='counter += 1'>Add 1</button>
+    <p>点击增加{{ counter }}</p>
+</div>
+
+<p>--------------------------------------------------------------</p>
+
+<div id="app16">
+    <button v-on:click='greet'>点击执行函数Greet</button>
+    <button v-on:click='say("haoge")'>点击执行函数say</button>
+</div>
+
+<p>--------------------------------------------------------------</p>
+
+<p>--------------------------------------------------------------</p>
+
+<div id="app17">
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+    <button-counter></button-counter>
+</div>
+
+<p>--------------------------------------------------------------</p>
+
+<p>--------------------------------------------------------------</p>
+
+<div id="app18">
+    <blog-post title='Why Vue is so fun'></blog-post>
+    <blog-post title='Blogging with Vue'></blog-post>
+</div>
+
+<p>--------------------------------------------------------------</p>
 
 
-	{% endverbatim %}
+<p>--------------------------------------------------------------</p>
+<h1>组件测试</h1>
 
-	<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="{% static 'js/index.js' %}"></script>
+<div class="" id="components-demo">
+    <button-counter></button-counter>
+</div>
+
+<p>--------------------------------------------------------------</p>
+
+<div id="blog-post-demo">
+    <blog-post
+            v-for="post in posts"
+            v-bind:key="post.id"
+            v-bind:title="post.title"
+    ></blog-post>
+</div>
+
+<p>--------------------------------------------------------------</p>
+
+<blo-post1 v-for="'post in posts"
+          v-bind:key="post.id"
+          v-bind:post="'post"
+>
+
+</blo-post1>
+
+<p>--------------------------------------------------------------</p>
+
+<div id="apps">
+    <h1>hello haoge</h1>
+
+    <p>
+        <router-link to="'/foo">go to foo</router-link>
+        <router-link to="'/bar">go to bar</router-link>
+    </p>
+
+    <!-- 路由出口 -->
+        <router-view></router-view>
+</div>
+
+<p>--------------------------------------------------------------</p>
+
+{% endverbatim %}
+
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script src="{% static 'js/index.js' %}"></script>
 </body>
 
 </html>

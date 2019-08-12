@@ -1,0 +1,75 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{#<div id="app">#}
+{#    <input type="text" v-model="name" placeholder="你浩哥">#}
+{#    {% verbatim %}#}
+{#    <h1>hello, {{ name }}</h1>#}
+{#    <p v-pre>{{ 这里的内容是不会被编译的. }}</p>#}
+{#    {% endverbatim %}#}
+{#</div>#}
+
+<p>----------------------------------------------------------</p>
+
+<div id="app">
+    {% verbatim %}
+        {{ number / 10 }}
+        {{ isOK ? 'yes' : 'no' }}
+        {{ text.split(',').reverse(.join(',') }}
+    {% endverbatim %}
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            number: 100,
+            isOK: false,
+            text: '123,456'
+        }
+    })
+</script>
+
+{#<script>#}
+{#    var app = new Vue({#}
+{#        el: '#app',#}
+{#        data: {#}
+{#            name: '',#}
+{#            user: 'hello'#}
+{#        },#}
+{#        created: function () {#}
+{#            // 创建实例之后,挂载实例之前#}
+{#            console.log(this.user);#}
+{#            console.log(this.$el); // 还未加载#}
+{#            var _this = this;#}
+{#            this.timer = setInterval(function () {#}
+{#               _this.date = new Date();#}
+{#            }, 1000);#}
+{#        },#}
+{#        mounted: function () {#}
+{#            console.log(this.$el);#}
+{#        },#}
+{#        beforeDestroy: function () {#}
+{#            if (this.timer) {#}
+{#                console.log(this.timer);#}
+{#                console.log(111);#}
+{#                clearInterval(this.timer);#}
+{#            }#}
+{#        }#}
+{#    });#}
+{##}
+{#    console.log(app.$el);#}
+{#    console.log(app.user);#}
+{#</script>#}
+
+</body>
+</html>

@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import VueView
+from . import views
 
 
 app_name = 'demo'
 
 
 urlpatterns = [
-    path('', VueView.as_view(), name='vue'),
+    path('', views.VueView.as_view(), name='vue'),
+    path('a1/', views.DemoView.as_view(), name='a1'),
 ]

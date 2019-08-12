@@ -223,12 +223,12 @@ var app12 = new Vue({
 });
 
 var user = new Vue({
-    data: {
-        userProfile: {
-            name: 'haoge'
+        data: {
+            userProfile: {
+                name: 'haoge'
+            }
         }
-    }
-})
+    })
 ;
 // 设置属性值1
 Vue.set(user.userProfile, 'age', 28)
@@ -305,32 +305,33 @@ new Vue({
 ;
 
 var app15 = new Vue({
-    el: '#app15',
-    data: {
-        counter: 0
-    }
-})
+        el: '#app15',
+        data: {
+            counter: 0
+        }
+    })
 ;
 
 var app16 = new Vue({
-    el: '#app16',
-    data: {
-        name: 'vue.js'
-    },
-    methods: {
-        greet: function (param) {
-            alert('hello' + this.name + '!')
+        el: '#app16',
+        data: {
+            name: 'vue.js'
         },
-        say: function (message) {
-            alert('hello' + message)
-        } // hello haoge
-    }
-}) // hello vue.js
+        methods: {
+            greet: function (param) {
+                alert('hello' + this.name + '!')
+            },
+            say: function (message) {
+                alert('hello' + message)
+            } // hello haoge
+        }
+    }) // hello vue.js
 ;
 
 // vue组件 (下面是全局注册实例)
 Vue.component('button-counter', {
     data: function (param) {
+        // data必须是函数
         return {
             count: 0
         }
@@ -363,4 +364,48 @@ Vue.component('button-counter', {
     template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
 });
 
-new Vue({ el: '#components-demo'});
+new Vue({el: '#components-demo'});
+
+
+new Vue({
+    el: '#blog-post-demo',
+    data: {
+        posts: [
+            {id: 1, title: 'My journey with Vue'},
+            {id: 2, title: 'Blogging with Vue'},
+            {id: 3, title: 'Why Vue is so fun'}
+        ]
+    }
+});
+
+// 重构上面的实例
+
+Vue.component('blog-post1', {
+    props: ['post'],
+    template: '<div class="blog-post">\n' +
+        '      <h3>{{ post.title }}</h3>\n' +
+        '      <div v-html="post.content"></div>\n' +
+        '    </div>'
+});
+
+
+// ************************************************
+
+// 定义路由组件 也可以import进来
+const Foo = {template: '<div>foo</div>'};
+const Bar = {template: '<div>bar</div>'};
+
+// 定义路由
+const routes = [
+    {path: '/foo', component: Foo},
+    {path: '/bar', component: Bar},
+];
+
+// 3. 创建 router 实例，然后传 `routes` 配置
+const router = new VueRouter({
+    routes: routes
+});
+
+const apps = new Vue({
+    router
+}).$mount('#apps');

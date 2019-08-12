@@ -22,3 +22,8 @@ class VueView(View):
     def get(self, request):
         # print('"python.autoComplete.addBrackets": true,')
         return render(request, 'index.html')
+
+
+class DemoView(View):
+    def get(self, request):
+        return render(request, 'demo.html')
