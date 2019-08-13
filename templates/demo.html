@@ -16,14 +16,72 @@
 {#    {% endverbatim %}#}
 {#</div>#}
 
-<p>----------------------------------------------------------</p>
+{#<p>----------------------------------------------------------</p>#}
 
-<div id="app">
-    {% verbatim %}
-        {{ number / 10 }}
-        {{ isOK ? 'yes' : 'no' }}
-        {{ text.split(',').reverse(.join(',') }}
-    {% endverbatim %}
+{#<div id="app">#}
+{#    {% verbatim %}#}
+{#        {{ number / 10 }}#}
+{#        {{ isOK ? 'yes' : 'no' }}#}
+{#        {{ text.split(',').reverse(.join(',') }}#}
+{#    {% endverbatim %}#}
+{#</div>#}
+
+{#<div id="app">#}
+{#    <a v-bind:href="url">链接</a>#}
+{#    <img v-bind:src="imgUrl" alt="">#}
+{#</div>#}
+
+{#<div id="app">#}
+{#    <p v-if="show">这是一段文本</p>#}
+{#    <button v-on:click="handleClose">点击隐藏</button>#}
+{#</div>#}
+
+<!-- 计算属性  computed -->
+
+{#<div id="app">#}
+{#    {% verbatim %}#}
+{#    {{ reversedText }}#}
+{#    {% endverbatim %}#}
+{#</div>#}
+
+<!-- 计算属性高级用法  computed -->
+
+{#<div id="app">#}
+{#    {% verbatim %}#}
+{#        总价: {{ prices }}#}
+{#    {% endverbatim %}#}
+{#</div>#}
+
+<!-- 计算属性高级用法  computed getter - setter -->
+
+{#<div id="app">#}
+{#    {% verbatim %}#}
+{#    姓名: {{ fullName }}#}
+{#    {% endverbatim %}#}
+{##}
+{#    {% verbatim %}#}
+{#    <p>{{ lastName }}</p>#}
+{#    {% endverbatim %}#}
+{#    <input type="text" v-model="lastName">#}
+{#</div>#}
+
+<!-- v-bind 语法  -->
+{#<div id="app">#}
+{#    <div :class="classes">#}
+{##}
+{#    </div>#}
+{#</div>#}
+
+<div id="'app">
+    <ul>
+        <template v-for="'book in books">
+            <p>哈哈</p>
+            {% verbatim %}#}
+            <li>书名: {{ boook.name }}</li>
+            <li>作者: {{ boook.author }}</li>
+            {% endverbatim %}
+        </template>
+    </ul>
 </div>
 
 <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
@@ -32,12 +90,163 @@
     var app = new Vue({
         el: '#app',
         data: {
-            number: 100,
-            isOK: false,
-            text: '123,456'
+            books: [
+                {
+                    name :'Vue.j 实战',
+                    author: '粱澈',
+                },
+                {
+                    name :'JavaScript语言精粹',
+                    author: '粱澈',
+                },
+                {
+                    name :'JavaScript语言',
+                    author: '粱澈',
+                },
+            ]
         }
-    })
+    });
+    app.books = app.books.filter(function (item) {
+        return item.name.match(/JavaScript/);
+    });
 </script>
+
+{#<script>#}
+{#    var app = new Vue({#}
+{#        el: '#app',#}
+{#        data: {#}
+{#            isActive: true,#}
+{#            error: null#}
+{#        },#}
+{#        computed: {#}
+{#            classes: function () {#}
+{#                return {#}
+{#                    active: this.isActive && !this.error,#}
+{#                    'text-fail': this.erorr && this.error.type === 'fail'#}
+{#                }#}
+{#            }#}
+{#        }#}
+{#    })#}
+{#</script>#}
+
+{#<script>#}
+{#    var app = new Vue({#}
+{#        el: '#app',#}
+{#        data: {#}
+{#            firstName: 'jack',#}
+{#            lastName: 'green'#}
+{#        },#}
+{#        computed: {#}
+{#            fullName: {#}
+{#                // getter, 用于读取#}
+{#                get: function () {#}
+{#                    return this.firstName + ' ' + this.lastName;#}
+{#                },#}
+{#                // setter, 写入时触发#}
+{#                set: function (newValue) {#}
+{#                    var names = newValue.split(' ');#}
+{#                    this.firstName = names[0];#}
+{#                    this.lastName = names[names.length - 1];#}
+{#                }#}
+{#            }#}
+{#        }#}
+{#    })#}
+{#</script>#}
+
+{#<script>#}
+{#    var app = new Vue({#}
+{#        el: '#app',#}
+{#        data: {#}
+{#            package1: [#}
+{#                {#}
+{#                    name: 'iphone7',#}
+{#                    price: 7199,#}
+{#                    count: 2#}
+{#                },#}
+{#                {#}
+{#                    name: 'ipad',#}
+{#                    price: 2888,#}
+{#                    count: 1#}
+{#                },#}
+{#            ],#}
+{#            package2: [#}
+{#                {#}
+{#                    name: 'apple',#}
+{#                    price: 3,#}
+{#                    count: 5#}
+{#                },#}
+{#                {#}
+{#                    name: 'banana',#}
+{#                    price: 2,#}
+{#                    count: 10#}
+{#                }#}
+{#            ]#}
+{#        },#}
+{#        computed: {#}
+{#            prices: function () {#}
+{#                var prices = 0;#}
+{#                for (var i = 0; i < this.package1.length; i++) {#}
+{#                    prices += this.package1[i].price * this.package1[i].count;#}
+{#                }#}
+{#                for (var i = 0; i < this.package2.length; i++) {#}
+{#                    prices += this.package2[i].price * this.package2[i].count;#}
+{#                }#}
+{#                return prices#}
+{#            }#}
+{#        }#}
+{#    })#}
+{#</script>#}
+
+{#<script>#}
+{#    var app = new Vue({#}
+{#        el: '#app',#}
+{#        data: {#}
+{#            text: '123,456'#}
+{#        },#}
+{#        computed: {#}
+{#            reversedText: function () {#}
+{#                // this 指向Vue实例#}
+{#                return this.text.split(',').reverse().join(',');#}
+{#            }#}
+{#        }#}
+{#    })#}
+{#</script>#}
+
+{#<script>#}
+{#    var app = new Vue({#}
+{#        el: '#app',#}
+{#        data: {#}
+{#            show: true,#}
+{#        },#}
+{#        methods: {#}
+{#            handleClose: function () {#}
+{#                this.show = false;#}
+{#            }#}
+{#        }#}
+{#    })#}
+{#</script>#}
+
+{#<script>#}
+{#    var app = new Vue({#}
+{#        el: '#app',#}
+{#        data: {#}
+{#            url: 'https://www.baidu.com',#}
+{#            imgUrl: 'http://www..baidu.com/img.png'#}
+{#        }#}
+{#    })#}
+{##}
+{#</script>#}
+
+{#<script>#}
+{#    var app = new Vue({#}
+{#        el: '#app',#}
+{#        data: {#}
+{#            number: 100,#}
+{#            isOK: false,#}
+{#            text: '123,456'#}
+{#        }#}
+{#    })#}
+{#</script>#}
 
 {#<script>#}
 {#    var app = new Vue({#}

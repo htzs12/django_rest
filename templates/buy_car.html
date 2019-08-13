@@ -1,0 +1,72 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+{% verbatim %}
+<div id="app" v-cloak>
+    <template v-if="list.length">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>商品名称</th>
+                    <th>商品单价</th>
+                    <th>购买数量</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in list">
+                    <td>{{ index + 1 }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>
+                        <button v-on:click="handleReduce(index)" v-bind:disabled="item.count === 1">-</button>
+                        {{ item.count }}
+                        <button v-on:click="handleAdd(index)">+</button>
+                    </td>
+                    <td>
+                        <button v-on:click="handleRemove(index)">移除</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>总价: $ {{ totalPrice }}</div>
+    </template>
+    <div v-else>购物车为空</div>
+</div>
+
+<p>-------------------------------------------------------</p>
+<!-- 单选框 -->
+<div id="app1">
+    <input type="radio" v-model="'picked" value="html" id="html">
+    <label for="html">HTML</label>
+    <br>
+    <input type="radio" v-model="'picked" value="js" id="js">
+    <label for="html">JS</label>
+    <br>
+    <input type="radio" v-model="'picked" value="css" id="css">
+    <label for="html">CSS</label>
+    <br>
+    <p>选择的是:{{ picked }}</p>
+</div>
+
+<!-- 复选框 -->
+<div id="app3">
+    <input type="checkbox" v-model="'checked" id="checked">
+    <label for="checked">选择状态: {{ checked }}</label>
+</div>
+
+{% endverbatim %}
+
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script src="{% static 'js/indexs.js' %}"></script>
+
+</body>
+</html>

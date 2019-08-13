@@ -27,3 +27,8 @@ class VueView(View):
 class DemoView(View):
     def get(self, request):
         return render(request, 'demo.html')
+
+
+class BuyCarView(View):
+    def get(self, request):
+        return render(request, 'buy_car.html')
