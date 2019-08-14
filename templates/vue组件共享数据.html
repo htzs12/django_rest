@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <my-component></my-component>
+    <my-component></my-component>
+    <my-component></my-component>
+</div>
+
+<!-- input输入转换成数字 -->
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+
+    Vue.component('my-component', {
+        template: '<div>{{ message }}</div>',
+        data: function () {
+            return {
+                message: '组件内容'
+            }
+        }
+    }) 
+
+    var app = new Vue({
+        el: '#app'
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input-number v-model="value" :max="10" :min="0"></input-number>
+</div>
+
+<!-- input输入转换成数字 -->
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+
+    Vue.component('input-number', {
+        template: '<div class="input-number"></div>',
+        props: {
+            max: {
+                type: Number,
+                default: Infinity
+            },
+            min: {
+                type: Number,
+                default: -Infinity
+            },
+            value: {
+                type: Number,
+                default: 0
+            }
+        },
+        data: function () {
+            return {
+                currentValue: this.value
+            }
+        }
+    })
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            value: 5
+        }
+    })
+</script>
+
+</body>
+</html>

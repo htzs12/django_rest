@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p>总数: {{ total }}</p>
+    <my-component @increate='handleGetTotal' @reduce='handleGetTotal'></my-component>
+</div>
+
+<!-- input输入转换成数字 -->
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+
+    // var data = {
+    //     counter: 0
+    // }
+    // 三个模板的值 互不影响.达到复用的目的
+    
+    Vue.component('my-component', {
+        template: '<div><button @click="handleIncrease">+1</button><button @click="handleReduce">-1</button></div>',
+        data: function () {
+            return {
+                counter: 0
+            }
+        },
+        methods: {
+            handleIncrease: function () {
+                this.counter++;
+                this.$emit('increase', this.counter); // 传递给父组件
+            },
+            handleReduce: function () {
+                this.counter--;
+                this.$emit('reduce', this.counter);
+            }
+        }
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            total: 0
+        },
+        methods: {
+            handleGetTotal: function (total) {
+                this.total = total;
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model='parentMessage'>
+    <my-component :message='parentMessage'></my-component>
+</div>
+
+<!-- input输入转换成数字 -->
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+
+    // var data = {
+    //     counter: 0
+    // }
+    // 三个模板的值 互不影响.达到复用的目的
+    
+    Vue.component('my-component', {
+        props: ['message'],
+        template: '<div>这是动态绑定组件{{ message }}</div>'
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            parentMessage: ''
+        }
+    })
+</script>
+
+</body>
+</html>

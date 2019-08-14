@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="checkbox" v-model="checked" value='html' id='html'>
+    <label for="html">html</label>
+    <br>
+    <input type="checkbox" v-model="checked" value='js' id='js'>
+    <label for="html">js</label>
+    <br>
+    <input type="checkbox" v-model="checked" value='css' id='css'>
+    <label for="html">css</label>
+    <br>
+    <p>选择的项是: {{ checked }}</p>
+</div>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: '',
+            checked: ['html', 'css']
+        }
+    })
+</script>
+
+</body>
+</html>

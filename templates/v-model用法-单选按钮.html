@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model="message" placeholder="输入...">
+    <p>输入的内容是: {{ message }}</p>
+
+    <P>------------------------------------------</P>
+
+    <input type="radio" :checked='picked'>
+    <label for="">单选按钮</label>
+    
+</div>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: '',
+            picked: false
+        }
+    })
+</script>
+
+</body>
+</html>

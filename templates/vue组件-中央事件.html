@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p>{{ message }}</p>
+    <component-a></component-a>
+</div>
+
+<!-- input输入转换成数字 -->
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+
+    // var data = {
+    //     counter: 0
+    // }
+    // 三个模板的值 互不影响.达到复用的目的
+    
+    var bus = new Vue();
+
+    Vue.component('component-a', {
+        template: '<div><button @click="handleEvent">传递事件</button></div>',
+        methods: {
+            handleEvent: function () {
+                bus.$emit('on-message', '来自组件component-a的内容'); // 传递给父组件
+            }
+        }
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: ''
+        },
+        mounted: function () {
+            var _this = this;
+            // 在实例初始化时,坚挺来自bus实例的事件
+            bus.$on('on-message', function (msg) {
+                _this.message = msg;
+            })
+        }
+    })
+</script>
+
+</body>
+</html>

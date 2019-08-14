@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <my-component message='父组件的数据'></my-component>
+</div>
+
+<!-- input输入转换成数字 -->
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+
+    // var data = {
+    //     counter: 0
+    // }
+    // 三个模板的值 互不影响.达到复用的目的
+    
+    Vue.component('my-component', {
+        props: ['message'],
+        template: '<div>{{ message }}</div>'
+    });
+
+    var app = new Vue({
+        el: '#app'
+    })
+</script>
+
+</body>
+</html>

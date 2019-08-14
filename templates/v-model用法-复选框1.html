@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="checkbox" v-model="checked" id='checked'>
+    <label for="checked">选择状态: {{ checked }}</label>
+</div>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: '',
+            checked: false
+        }
+    })
+</script>
+
+</body>
+</html>
