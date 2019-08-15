@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="app">
+
+<h3 v-if='flag'>这是v-if控制的元素</h3>
+<h3 v-show='flag'>这是v-show控制的元素</h3>
+
+</div>
+
+<!-- v-if每次都会重新闯将元素,v-show只是设置属性为 display:none -->
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            flag: true
+        }
+    })
+</script>
+
+</body>
+</html>

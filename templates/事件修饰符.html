@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跑马灯demo</title>
+
+    <style>
+        .inner{
+            height: 150px;
+            background: pink;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="app">
+        <div class="inner" @click='divclick'>
+                <button>click</button @click='btnclick'>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                msg: '',
+            },
+            methods: {
+                divclick() {
+                    console.log('触发事件divclick!');
+                },
+                btnclick() {
+                    console.log('触发事件btnclick!');
+                }
+            },
+        })
+    </script>
+
+</body>
+</html>
