@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        /* v-enter 进入之前; v-enter-to 进入之后; v-leave离开之前; v-leave-to 离开之后; */
+
+        .v-enter, .v-leave-to {
+            opacity: 0;
+            transform: translateX(200px);
+        }
+
+        /* .v-enter-active 入场动画时间段 */
+        /* .v-leave-active 离场动画时间段 */
+
+        .v-enter-active,
+        .v-leave-active {
+            transition: all 0.8s ease;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<div id="app">
+
+    <!-- 使用transition实现动态效果 -->
+
+    <input type="button" value="toggle" @click="flag=!flag">
+
+    <transition>
+        <h3 v-if="flag">这是一个标签</h3>
+    </transition>
+
+</div>
+
+<!-- v-if每次都会重新闯将元素,v-show只是设置属性为 display:none -->
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            flag: false
+        },
+        methods: {
+
+        }
+    })
+</script>
+
+</body>
+</html>

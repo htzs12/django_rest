@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07cec21c-3f43-4da6-9208-d776c419eebf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/表单v-model控件用法.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/migrations/0003_auto_20190816_1456.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/migrations/0004_auto_20190816_1456.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/migrations/0005_auto_20190816_1457.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snippets/migrations/0003_auto_20190816_1456.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/vue-resource改造品牌列表案例.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/使用第三方类实现动画.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/动画效果.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/indexs.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/indexs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/buy_car.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/buy_car.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_rest/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rest/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ajax请求.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ajax请求.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,10 +35,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/表单v-model控件用法.html">
+        <entry file="file://$PROJECT_DIR$/templates/使用第三方类实现动画.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="215">
+              <caret line="41" column="6" lean-forward="true" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -59,6 +70,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/templates/ajax请求.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templates/vue-resource改造品牌列表案例.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/templates/index.html" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
@@ -70,7 +83,6 @@
         <option value="$USER_HOME$/django_code/lib/python3.6/site-packages/django/utils/deprecation.py" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$USER_HOME$/django_code/lib/python3.6/site-packages/django/core/management/base.py" />
-        <option value="$PROJECT_DIR$/django_rest/settings.py" />
         <option value="$USER_HOME$/django_code/lib/python3.6/site-packages/django/utils/module_loading.py" />
         <option value="$USER_HOME$/django_code/lib/python3.6/site-packages/django/utils/autoreload.py" />
         <option value="$USER_HOME$/django_code/lib/python3.6/site-packages/django/core/management/commands/runserver.py" />
@@ -82,14 +94,22 @@
         <option value="$PROJECT_DIR$/static/js/index.js" />
         <option value="$PROJECT_DIR$/static/js/demo.html" />
         <option value="$PROJECT_DIR$/templates/demo.html" />
-        <option value="$PROJECT_DIR$/demo/views.py" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/demo/urls.py" />
         <option value="$PROJECT_DIR$/static/js/indexs.js" />
         <option value="$PROJECT_DIR$/static/js/vue.js" />
         <option value="$PROJECT_DIR$/templates/buy_car.html" />
         <option value="$PROJECT_DIR$/templates/表单控件用法.html" />
         <option value="$PROJECT_DIR$/templates/表单v-model控件用法.html" />
+        <option value="$PROJECT_DIR$/demo/urls.py" />
+        <option value="$PROJECT_DIR$/templates/ajax请求.html" />
+        <option value="$PROJECT_DIR$/django_rest/settings.py" />
+        <option value="$PROJECT_DIR$/demo/serializers.py" />
+        <option value="$PROJECT_DIR$/demo/admin.py" />
+        <option value="$PROJECT_DIR$/demo/models.py" />
+        <option value="$PROJECT_DIR$/demo/views.py" />
+        <option value="$PROJECT_DIR$/templates/vue-resource改造品牌列表案例.html" />
+        <option value="$PROJECT_DIR$/templates/动画效果.html" />
+        <option value="$PROJECT_DIR$/templates/使用第三方类实现动画.html" />
       </list>
     </option>
   </component>
@@ -116,7 +136,7 @@
             <path>
               <item name="django_rest" type="b2602c69:ProjectViewProjectNode" />
               <item name="django_rest" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="django_rest" type="b2602c69:ProjectViewProjectNode" />
@@ -262,23 +282,24 @@
       <workItem from="1565596042711" duration="7644000" />
       <workItem from="1565654003687" duration="20424000" />
       <workItem from="1565741813228" duration="3561000" />
+      <workItem from="1565925858355" duration="11444000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52844000" />
+    <option name="totallyTimeSpent" value="64288000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.23067173" visible="true" weight="0.09734043" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.23067173" visible="true" weight="0.12978724" />
       <window_info id="Structure" order="1" sideWeight="0.76932824" side_tool="true" weight="0.09680851" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="manage.py@django_rest" weight="0.36708862" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893618" weight="0.31118143" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4994664" weight="0.31601274" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49893618" visible="true" weight="0.342827" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4994664" weight="0.42827004" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -286,7 +307,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010638" side_tool="true" weight="0.20042194" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.29113925" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32911393" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.41463414" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -324,26 +345,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/lib/python3.6/subprocess.py" />
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/utils/module_loading.py" />
-    <entry file="file:///usr/lib/python3.6/threading.py" />
-    <entry file="file:///usr/lib/python3.6/socketserver.py" />
-    <entry file="file:///usr/lib/python3.6/http/server.py" />
-    <entry file="file:///usr/lib/python3.6/wsgiref/simple_server.py" />
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/core/servers/basehttp.py" />
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/core/management/commands/dbshell.py" />
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/utils/autoreload.py" />
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/core/management/commands/makemigrations.py" />
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/shortcuts.py" />
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/urls/exceptions.py" />
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/urls/converters.py" />
     <entry file="file://$PROJECT_DIR$/django_rest/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -436,26 +437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/indexs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="753">
@@ -490,7 +471,134 @@
     <entry file="file://$PROJECT_DIR$/templates/表单v-model控件用法.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/mydjango/lib/python3.5/site-packages/django/http/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="550" column="28" lean-forward="true" selection-start-line="550" selection-start-column="28" selection-end-line="550" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/v-model用法-复选按钮.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/v-model用法-下拉选择.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/mydjango/lib/python3.5/site-packages/django/contrib/admin/static/admin/js/vendor/jquery/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="3518" column="16" selection-start-line="3518" selection-start-column="16" selection-end-line="3518" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/django_rest/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="51" column="50" lean-forward="true" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/实战2-表格案例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="104" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ajax请求.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/vue-resource改造品牌列表案例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-569">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#4#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/v-if和v-show使用.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/动画效果.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/使用第三方类实现动画.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="41" column="6" lean-forward="true" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
         </state>
       </provider>
     </entry>

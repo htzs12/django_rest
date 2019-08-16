@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div id="app">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">添加品牌</h3>
+        </div>
+        <div class="panel-body form-inline">
+            <label for="">
+                Id:
+                <input type="text" class="form-control" v-model='id'>
+            </label>
+            <label for="">
+                Name:
+                <input type="text" class="form-control" v-model='name'>
+            </label>
+            <input type="button" value="添加" class="btn btn-primary" @click='add'>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>名称</th>
+            <th>添加时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for='item in list' :key='item.id'>
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.add_time }}</td>
+            <td><a href="" @click.prevent="del(item.id)">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+<script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.js"></script>
+
+<script>
+
+    Vue.http.options.root = 'http://127.0.0.1:8000'; // 配置项目根路径
+    Vue.http.options.emulateJSON = true; // 启用post请求配置
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            id: '',
+            name: '',
+            list: [],
+        },
+        created() { // vue实例初始化后,vm实例会自动执行本函数.
+            this.getAllList();
+        },
+        methods: {
+            add() {
+                this.$http.post('demo/vue_api/', {name: this.name, id: this.id}).then(res=> {
+                    if (res.status === 200) {
+                        // 添加成功
+                        this.getAllList();
+                    } else {
+                        alert('添加失败.');
+                    }
+                })
+            },
+            del(id) { // 删除品牌
+                this.$http.post('demo/vue_api/', {id: id}).then(res=> {
+                    if (res.status === 200) {
+                        // 添加成功
+                        this.getAllList();
+                    } else {
+                        alert('删除失败.');
+                    }
+                })
+            },
+            getAllList() {
+                // 获取所有品牌列表
+
+                this.$http.get('demo/vue_api/').then(res=> {
+                    if (res.status === 200) {
+                        this.list = res.body['data'];
+                    } else {
+                        alert('获取数据失败');
+                    }
+                })
+
+            }
+
+        }
+    })
+</script>
+
+
+</body>

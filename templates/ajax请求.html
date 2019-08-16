@@ -8,7 +8,8 @@
 
 <div id="app">
     <input type="button" value='get请求' @click='getInfo'>
-    <p>{{ typeof message }}</p>
+    <input type="button" value='post请求' @click='postInfo'>
+    <input type="text" v-model="msg"></input>
 </div>
 
 <!-- input输入转换成数字 -->
@@ -20,7 +21,24 @@
     var app = new Vue({
         el: '#app',
         data: {
-            message: 123
+            msg: ''
+        },
+        methods: {
+            getInfo() {
+                this.$http.get('http://127.0.0.1:8000/demo/vue_api/').then(function (res) {
+                    this.msg = res.body['name'];
+                    console.log(res);
+                }, function () {
+                    console.log('请求失败~');
+                });
+            },
+            postInfo() {
+                this.$http.post('http://127.0.0.1:8000/demo/vue_api/', {}, {emulateJSON: true}).then(res=> {
+                    console.log(res);
+                }, function () {
+                    console.log('请求失败~');
+                });
+            }
         }
     })
 </script>

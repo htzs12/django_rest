@@ -1,3 +1,9 @@
 from django.contrib import admin
+from .models import VueApi
 
-# Register your models here.
+
+class VueAdmin(admin.ModelAdmin):
+    list_display = ('id', 'number', 'name', 'add_time')
+
+
+admin.site.register(VueApi, VueAdmin)

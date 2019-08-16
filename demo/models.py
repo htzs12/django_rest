@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 
 
@@ -26,3 +28,13 @@ class Author(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class VueApi(models.Model):
+    number = models.IntegerField(verbose_name='产品id')
+    name = models.CharField(max_length=32, verbose_name='产品名')
+    add_time = models.DateTimeField(default=datetime.now, verbose_name='添加时间')
+
+    def __str__(self):
+        return self.name
+
