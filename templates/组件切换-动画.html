@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .v-enter,
+        .v-leave-to{
+            opacity: 0;
+            transform: translateX(150px);
+        }
+
+        .v-enter-active,
+        .v-leave-active{
+            transition: all 0.5s ease;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="app">
+
+    <a href="" @click.prevent="comName='login'">登录</a>
+    <a href="" @click.prevent="comName='register'">注册</a>
+
+    <transition mode="out-in">
+        <component :is="comName"></component> <!-- component是占位符,:is属性 可以用来指定要展示的组件的名称. -->
+    </transition>
+
+</div>
+
+<template id="login">
+    <h1>登录组件</h1>
+</template>
+
+<template id="register">
+    <h1>注册组件</h1>
+</template>
+
+<!-- input输入转换成数字 -->
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+    // 创建全局组件
+    Vue.component('login', {
+        template: '#login',
+        data: function () {
+            return {}
+        }
+    });
+
+    Vue.component('register', {
+        template: '#register',
+        data: function () {
+            return {};
+        }
+    });
+    var app = new Vue({
+        el: '#app',
+        data: {
+            comName: ''
+        },
+    })
+</script>
+
+</body>
+</html>

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.css" rel="stylesheet">
+    <!-- 引入animate动画特效 -->
     <title>Document</title>
 
     <style>
@@ -28,15 +30,15 @@
 </head>
 <body>
 
-
 <div id="app">
 
     <!-- 使用transition实现动态效果 -->
 
     <input type="button" value="toggle" @click="flag=!flag">
 
-    <transition>
-        <h3 v-if="flag">这是一个标签</h3>
+    <hr>
+    <transition enter-active-class="animated bounceIn" leave-active-class="animated bounceOut">
+        <h3 v-if="flag">这是一个h3标签</h3>
     </transition>
 
 </div>
@@ -51,9 +53,7 @@
         data: {
             flag: false
         },
-        methods: {
-
-        }
+        methods: {},
     })
 </script>
 

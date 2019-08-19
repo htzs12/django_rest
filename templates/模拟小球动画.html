@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.css" rel="stylesheet">
+    <!-- 引入animate动画特效 -->
+    <title>Document</title>
+
+    <style>
+        .ball {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: red;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="app">
+    <input type="button" value="快到碗里来" @click="flag=!flag">
+
+    <transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter">
+        <div class="ball" v-show="flag"></div>
+    </transition>
+
+</div>
+
+<!-- v-if每次都会重新闯将元素,v-show只是设置属性为 display:none -->
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            flag: false
+        },
+        methods: {
+            // 动画钩子函数的第一个人参数是:el,表示要执行动画的那个DOM元素,是原生的js dom对象.
+            beforeEnter(el) {
+            // 动画入场之前,动画尚未开始
+                el.style.transform = 'translate(0, 0)' // 设置小球开始动画前,起始位置
+            },
+            enter(el, done) {
+            // 动画开始之后的样式
+                el.offsetWidth; // 必须要写,要不然没有过渡效果
+                el.style.transform = 'translate(150px, 450px)'; // 设置小球开始动画后,结束状态
+                el.style.transition = 'all 1s ease';
+                done(); // 动画完成 立即消失,调用afterEnter函数(done函数是afterEnter函数的引用)
+            },
+            afterEnter(el) {
+                // 动画完成之后
+                this.flag = !this.flag; // 隐藏小球
+                console.log(this.flag);
+            }
+        },
+    })
+</script>
+
+</body>
+</html>

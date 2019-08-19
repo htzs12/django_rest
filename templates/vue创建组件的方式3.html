@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <mycom1></mycom1>
+    <mycom2></mycom2>
+    <hr>
+    <mycom2></mycom2>
+</div>
+
+<template id="temp1">
+    <h1>这是优化的模板</h1>
+</template>
+
+<template id="temp2">
+    <div>
+        <input type="button" value="+1" @click="increment">
+        <h3>{{ count }}</h3>
+    </div>
+</template>
+
+<!-- input输入转换成数字 -->
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+    // 创建全局组件
+    Vue.component('mycom1', {
+        template: '#temp1',
+        data: function () {
+            return {}
+        }
+    }); // 注册组件
+
+    var dataObj = {count: 0};
+    Vue.component('mycom2', {
+        template: '#temp2',
+        data: function () {
+            return {count: 0};
+        },
+        methods: {
+            increment() {
+                this.count++;
+            }
+        }
+    }); // 注册组件
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: ''
+        },
+    })
+</script>
+
+</body>
+</html>

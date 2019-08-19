@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <a href="" @click.prevent="flag=true">登录</a>
+    <a href="" @click.prevent="flag=false">注册</a>
+
+    <login v-if="flag"></login>
+    <register v-else="flag"></register>
+
+</div>
+
+<template id="login">
+    <h1>登录组件</h1>
+</template>
+
+<template id="register">
+    <h1>注册组件</h1>
+</template>
+
+<!-- input输入转换成数字 -->
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+    // 创建全局组件
+    Vue.component('login', {
+        template: '#login',
+        data: function () {
+            return {}
+        }
+    });
+
+    Vue.component('register', {
+        template: '#register',
+        data: function () {
+            return {};
+        }
+    });
+    var app = new Vue({
+        el: '#app',
+        data: {
+            flag: true
+        },
+    })
+</script>
+
+</body>
+</html>

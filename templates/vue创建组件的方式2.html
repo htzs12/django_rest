@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <mycom1></mycom1>
+</div>
+
+<!-- input输入转换成数字 -->
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+    // 创建全局组件
+    Vue.component('mycom1', {
+        template: '<div><p>这个是全局组件..</p><span>这是标签.</span></div>' // 组件必须用大标签(div)包裹起来.
+    }); // 注册组件
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: ''
+        },
+    })
+</script>
+
+</body>
+</html>
