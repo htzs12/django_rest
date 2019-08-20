@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+
+    <router-link to="/login/10/haoge">登录</router-link>
+    <router-link to="/register">注册</router-link>
+
+    <router-view></router-view>
+</div>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/3.1.2/vue-router.js"></script>
+
+<script>
+
+    var login = {
+        template: '<h1>登录 -- {{ $route.params.id }} -- {{ $route.params.name }}</h1>',
+        created() {
+            console.log(this.$route.params.id); // 获取路由中id 值 - 10
+            console.log(this.$route.params.name); // 获取路由中id 值 - haoge
+        }
+    };
+
+    var register = {
+        template: '<h1>注册</h1>'
+    };
+
+    var router = new VueRouter({
+        routes: [
+            {path: '/login/:id/:name', component: login},
+            {path: '/register', component: register},
+        ]
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {},
+        methods: {},
+        router: router
+    })
+</script>
+
+</body>
+</html>

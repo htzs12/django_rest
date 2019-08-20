@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07cec21c-3f43-4da6-9208-d776c419eebf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/vue创建组件的方式1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/vue创建组件的方式2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/vue创建组件的方式3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/列表动画.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/实现小球动画.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/模拟小球动画.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/父组件向子组件传值.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/组件切换-动画.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/组件切换方式1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/组件切换方式2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/组件切换方式3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/ref-获取dom元素和组件.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/父组件向子组件传方法.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/组件案例-评论列表.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/路由命名视图实现布局.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/路由的基本使用.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/路由的嵌套.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/路由规则中定义参数.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/路由规则传参方法.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/使用第三方类实现动画.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/使用第三方类实现动画.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/父组件向子组件传值.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/父组件向子组件传值.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,20 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/实现小球动画.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/父组件向子组件传值.html">
+        <entry file="file://$PROJECT_DIR$/templates/路由命名视图实现布局.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <caret line="32" column="17" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -58,6 +46,7 @@
         <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="Gherkin feature file" />
         <option value="html-vue" />
       </list>
     </option>
@@ -71,6 +60,7 @@
       <find>configured</find>
       <find>print</find>
       <find>WSGI_APPLICATION</find>
+      <find>loadComments</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -84,7 +74,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/django_code/lib/python3.6/site-packages/django/views/defaults.py" />
         <option value="$USER_HOME$/django_code/lib/python3.6/site-packages/django/contrib/admin/sites.py" />
         <option value="$USER_HOME$/django_code/lib/python3.6/site-packages/django/urls/resolvers.py" />
         <option value="$USER_HOME$/django_code/lib/python3.6/site-packages/django/utils/deprecation.py" />
@@ -127,13 +116,22 @@
         <option value="$PROJECT_DIR$/templates/组件切换方式3.html" />
         <option value="$PROJECT_DIR$/templates/组件切换-动画.html" />
         <option value="$PROJECT_DIR$/templates/实现小球动画.html" />
+        <option value="$PROJECT_DIR$/templates/父组件向子组件传值.html" />
+        <option value="$PROJECT_DIR$/templates/父组件向子组件传方法.html" />
+        <option value="$PROJECT_DIR$/templates/组件案例-评论列表.html" />
+        <option value="$PROJECT_DIR$/templates/ref-获取dom元素和组件.html" />
+        <option value="$PROJECT_DIR$/templates/路由的基本使用.html" />
+        <option value="$PROJECT_DIR$/templates/路由规则中定义参数.html" />
+        <option value="$PROJECT_DIR$/templates/路由规则传参方法.html" />
+        <option value="$PROJECT_DIR$/templates/路由命名视图实现布局.html" />
+        <option value="$PROJECT_DIR$/templates/路由的嵌套.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1920" />
     <option name="width" value="1920" />
-    <option name="height" value="1037" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -168,7 +166,7 @@
     <property name="SearchEverywhereHistoryKey" value="Command&#9;null&#9;null&#10;resolve&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vPaaS.CMSPortal/vpm-project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../adminy" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -295,18 +293,19 @@
       <workItem from="1565654003687" duration="20424000" />
       <workItem from="1565741813228" duration="3561000" />
       <workItem from="1565925858355" duration="14385000" />
-      <workItem from="1566172632390" duration="18184000" />
+      <workItem from="1566172632390" duration="19165000" />
+      <workItem from="1566263269189" duration="21301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85413000" />
+    <option name="totallyTimeSpent" value="107695000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1919" y="-1" width="1922" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.23067173" visible="true" weight="0.13670212" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.23067173" visible="true" weight="0.13617021" />
       <window_info id="Structure" order="1" sideWeight="0.76932824" side_tool="true" weight="0.09680851" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -359,23 +358,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/urls/conf.py" />
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/urls/resolvers.py" />
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/urls/__init__.py" />
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/apps/registry.py" />
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/__init__.py" />
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/core/wsgi.py" />
-    <entry file="file://$USER_HOME$/django_code/lib/python3.6/site-packages/django/core/handlers/wsgi.py" />
-    <entry file="file://$PROJECT_DIR$/django_rest/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <element signature="e#227#236#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/snippets/permissions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -431,16 +413,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="753">
           <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/vue.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="3244" column="20" selection-start-line="3244" selection-start-column="20" selection-end-line="3244" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -686,15 +658,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/实现小球动画.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+        <state relative-caret-position="231">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/父组件向子组件传值.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/父组件向子组件传方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ref-获取dom元素和组件.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/vue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="144" selection-start-line="6" selection-start-column="144" selection-end-line="6" selection-end-column="144" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/组件案例-评论列表.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="68" column="10" lean-forward="true" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/路由规则中定义参数.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/路由规则传参方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/路由的基本使用.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="66" column="34" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/路由的嵌套.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="49" column="27" lean-forward="true" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/路由命名视图实现布局.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="32" column="17" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
         </state>
       </provider>
     </entry>

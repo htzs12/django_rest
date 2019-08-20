@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <router-view></router-view>
+    <router-view name="left"></router-view>
+    <router-view name="right"></router-view>
+</div>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/3.1.2/vue-router.js"></script>
+
+<script>
+
+    var header = {
+        template: '<h1>头部区域</h1>'
+    };
+
+    var left = {
+        template: '<h1>左边区域</h1>'
+    };
+
+    var right = {
+        template: '<h1>右边区域</h1>'
+    };
+
+    var router = new VueRouter({
+        routes: [
+            {
+                path: '/', components: {
+                    'default': header,
+                    'left': left,
+                    'right': right,
+                }
+            },
+        ]
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {},
+        methods: {},
+        router
+    })
+</script>
+
+</body>
+</html>

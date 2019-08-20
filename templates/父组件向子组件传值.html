@@ -7,7 +7,7 @@
 <body>
 
 <div id="app">
-
+    <com1 v-bind:parentmsg="msg"></com1>
 </div>
 
 <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
@@ -15,7 +15,19 @@
 <script>
     var app = new Vue({
         el: '#app',
-        data: {}
+        data: {
+            msg: '这是父组件的数据.'
+        },
+        methods: {},
+        components: {
+            com1: {
+                template: '<h1>这是子组件{{ parentmsg }}</h1>',
+                props: ['parentmsg'], // 只读,通过父组件传递过来的
+                data() {
+                    return {title: 123}
+                }
+            }
+        }
     })
 </script>
 

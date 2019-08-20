@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .router-link-active{
+            color: red;
+            font-weight: 600;
+        }
+
+        .mystyle {
+            color: pink;
+            font-weight: 800;
+        }
+
+        .v-enter,
+        .v-leave-to{
+            opacity: 0;
+            transform: translateX(140px);
+        }
+
+        .v-enter-active,
+        .v-leave-active{
+            transition: all 0.5s ease;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="app">
+<!--
+    <a href="#/login">登录</a>
+    <a href="#/register">注册</a>
+-->
+
+    <router-link to="/login">登录</router-link>
+    <router-link to="/register">注册</router-link>
+
+    <transition mode="out-in">
+        <router-view></router-view> <!-- 渲染展示 -->
+    </transition>
+
+</div>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/3.1.2/vue-router.js"></script>
+
+<script>
+
+    var login = {
+        template: '<h1>登录组件</h1>'
+    };
+
+    var register = {
+        template: '<h1>注册组件</h1>'
+    };
+
+    var routerObj = new VueRouter({
+        // 表示路由匹配规则
+        routes: [ // 有2个必须的属性
+            {path: '/', redirect: '/register'}, // 强制展示一个页面.
+            {path: '/login', component: login}, // 表示监听的是那个路由链接地址.
+            {path: '/register', component: register}, // 表示监听的是那个路由链接地址.
+        ],
+        linkActiveClass: 'mystyle' // 自定义链接样式
+
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {},
+        methods: {},
+        router: routerObj // 讲路由规则对象,注册到vm实例上.
+    })
+</script>
+
+</body>
+</html>

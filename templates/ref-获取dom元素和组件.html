@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="button" value="获取元素" @click="getElement">
+    <h3 id="demo" ref="demo">hello haoge</h3>
+</div>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {},
+        methods: {
+            getElement() {
+                console.log(this.$refs.demo.innerText);  // hello haoge
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <com2 v-on:func='show'></com2>
+</div>
+
+    <template id="tmp1">
+        <div>
+            <h1>这是子组件</h1>
+            <input type="button" value="点击" @click="myclick">
+        </div>
+    </template>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+
+    var com2 = {
+        template: '#tmp1',
+        methods: {
+            myclick() {
+                console.log('ok');
+                this.$emit('func'); // 触发/调用-------
+            }
+        }
+    };
+
+    var app = new Vue({
+        el: '#app',
+        data: {},
+        methods: {
+            show() {
+                console.log('调用了父组件身上的show方法..');
+            },
+        },
+        components: {
+            com2: com2
+        }
+    })
+</script>
+
+</body>
+</html>

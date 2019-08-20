@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+
+    <cmt-box @func="loadComments"></cmt-box>
+
+    <div>
+        <ul>
+            <li v-for="item in list" :key="item.user">
+                <span>{{ item.id }}</span>
+                <span>评论人: {{ item.user }}</span>
+                {{ item.content }}
+            </li>
+        </ul>
+    </div>
+</div>
+
+<template id="tmp1">
+    <div>
+        <label for="">评论人:</label>
+        <input type="text" class="" v-model="user">
+        <label for="">评论内容:</label>
+        <textarea name="" id="" cols="30" rows="10" v-model="content"></textarea>
+        <input type="button" value="发表评论" @click="postComment">
+    </div>
+</template>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+<script>
+
+    var commentBox = {
+        data() {
+            return {
+                user: '',
+                content: ''
+            }
+        },
+        template: '#tmp1',
+        methods: {
+            postComment() { // 发表评论的号码
+                var comment = {id: Date.now(), user: this.user, content: this.content};
+                var list = JSON.parse(localStorage.getItem('cmts') || '[]'); // 从localStorage获取对象
+                list.unshift(comment); // 头部添加
+                localStorage.setItem('cmts', JSON.stringify(list)); // 储存值
+                this.user = this.content = ''; // 清空
+                this.$emit('func'); // 刷新页面
+            }
+        },
+    };
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            list: [
+                {id: Date.now(), user: 'hao', content: 'hello'},
+                {id: Date.now(), user: 'htzs', content: 'world'},
+                {id: Date.now(), user: 'htzs12', content: 'hello world'},
+            ]
+        },
+        components: {
+            'cmt-box': commentBox
+        },
+        methods: {
+            loadComments() { // 从本地localStorage获取评论列表
+                var list = JSON.parse(localStorage.getItem('cmts')||'[]');
+                this.list = list; // 获取并覆盖list
+            },
+        },
+        created() {
+          this.loadComments();
+        },
+    })
+</script>
+
+</body>
+</html>
