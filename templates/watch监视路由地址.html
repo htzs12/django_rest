@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <router-link to="/login">登录</router-link>
+    <router-link to="/register">注册</router-link>
+
+    <router-view></router-view>
+
+</div>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/3.1.2/vue-router.js"></script>
+
+<script>
+
+    var login = {
+        template: '<h3>这是登录子组件</h3>'
+    };
+
+    var register = {
+        template: '<h3>这是注册子组件</h3>'
+    };
+
+    var router = new VueRouter({
+       routes: [
+           {path: '/', redirect: '/login'},
+           {path: '/login', component: login},
+           {path: '/register', component: register}
+       ]
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {},
+        methods: {},
+        router,
+        watch: { // 适合监听非dom元素
+           '$route.path': function (newVal, oldVal) {
+               console.log(newVal + '---' + oldVal);
+               if (newVal === '/login') {
+                   console.log('欢迎进入管理页面');
+               }else if (newVal === '/register') {
+                   console.log('欢迎进入注册页面');
+               }
+           }
+        }
+    })
+</script>
+
+</body>
+</html>
