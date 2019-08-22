@@ -1,0 +1,11 @@
+li{
+    list-style: none;
+}
+
+body, html{
+    background: url("../images/1000233.jpg");
+}
+
+.mycss {
+    color: pink;
+}

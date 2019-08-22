@@ -16,7 +16,7 @@ module.exports = {
         new htmlwebpackplugin({
             // 创建一个内存中生成html页面
             template: path.join(__dirname, './src/index.html'),
-            filename: 'index123.html'
+            filename: 'index.html'
         })
     ],
     module: { // 这个节点,配置所有第三方模块的加载器
@@ -25,6 +25,12 @@ module.exports = {
             {test: /\.css$/, use: ['style-loader', 'css-loader']}, // 用户配置css文件规则
             {test: /\.(jpg|png|gif|jpeg|bmp)$/, use: 'url-loader'}, // 用户配置css样式background图片规则 (url-loader?limit=1024 可配置大小)
             {test:/\.js$/, use: 'babel-loader', exclude: /node_modules/}, // 配置babel来转化es6高级语法
+            {test:/\.vue$/, use: 'vue-loader'}, // 配置babel来转化es6高级语法
         ]
-    }
+    },
+    // resolve: {
+    //     alias: {
+    //         'vue$': 'vue/dist/vue.js'
+    //     }
+    // }
 };

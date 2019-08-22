@@ -1,3 +1,4 @@
+
 // 这是项目js的入口项目
 
 // 导入jquery
@@ -5,6 +6,24 @@ import $ from 'jquery'
 
 import './css/index.css'
 
+import demo, { title } from './test.js'
+
+console.log(demo);
+console.log(title);
+
+// import Vue from '../node_modules/vue/dist/vue.js'
+import Vue from 'vue'
+
+import login from './login.vue'
+
+
+// var vm = new Vue({
+//    el: '#app',
+//     data: {
+//        msg: '123'
+//     },
+//     render: c => c(login)
+// });
 
 $(function () {
     $('li:odd').css('backgroundColor', 'blue');
