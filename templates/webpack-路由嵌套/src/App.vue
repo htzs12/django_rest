@@ -6,6 +6,8 @@
 
         <mt-button type='danger' size='more' @click="show">点击弹窗</mt-button>
 
+        <button type="button" class="mui-btn mui-btn-royal">紫色</button> 
+
         <router-link to="/account">Account</router-link>
         <router-link to="/goodslist">Goodlist</router-link>
         

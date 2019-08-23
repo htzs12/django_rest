@@ -14,6 +14,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import './css/index.css'
 
+import './lib/mui/css/mui.css'
+
 
 Vue.use(MintUI)
 

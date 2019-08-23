@@ -29,6 +29,7 @@ module.exports = {
             {test: /\.(jpg|png|gif|jpeg|bmp)$/, use: 'url-loader'}, // 用户配置css样式background图片规则 (url-loader?limit=1024 可配置大小)
             {test:/\.js$/, use: 'babel-loader', exclude: /node_modules/}, // 配置babel来转化es6高级语法
             {test:/\.vue$/, use: 'vue-loader'}, // 配置babel来转化es6高级语法
+            {test:/.(png|gif|jpg|svg|ttf)$/, use: 'file-loader'}, // 配置babel来转化es6高级语法
         ]
     },
     // resolve: {

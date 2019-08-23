@@ -6,6 +6,5 @@
         <router-link to="/goodslist">Goodlist</router-link>
         
         <router-view></router-view>
-        
     </div>
 </template>
